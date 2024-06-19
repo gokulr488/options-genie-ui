@@ -1,5 +1,6 @@
 import 'package:optionsgenieui/apis/og_login.dart';
 import 'package:optionsgenieui/apis/upstox_login_page.dart';
+import 'package:optionsgenieui/apis/upstox_login.dart';
 import 'package:talos_commons/utils/call_context.dart';
 
 class Apis {
@@ -11,5 +12,9 @@ class Apis {
     return await OgLoginApi(
             req: OgLoginReq(password: password, userName: userName))
         .call();
+  }
+
+  Future<CallContext> upstoxLogin(String code) async {
+    return await UpstoxLoginApi(req: UpstoxLoginReq(code: code)).call();
   }
 }

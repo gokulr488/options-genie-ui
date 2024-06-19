@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:optionsgenieui/apis/apis.dart';
-import 'package:optionsgenieui/common/app_data.dart';
 import 'package:optionsgenieui/screens/home/home_controller.dart';
-import 'package:talos_commons/base_classes/base_api.dart';
-import 'package:talos_commons/utils/call_context.dart';
 import 'package:talos_commons/widgets/base_screen.dart';
+import 'package:talos_commons/widgets/build_text_field.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,25 +16,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    init();
+    ctrl.init();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const BaseScreen(
+    return BaseScreen(
         headerText: '',
         child: Padding(
-          padding: EdgeInsets.all(8),
-          child: Column(children: []),
+          padding: const EdgeInsets.all(8),
+          child: Column(children: [
+            TextButton(
+                onPressed: ctrl.onLoginToUpstoxClicked,
+                child: const Text('Login to Upstox')),
+            BuildTextField(
+                label: 'Upstox Code',
+                initialValue: ctrl.upstoxCode,
+                onChanged: (p0) => ctrl.upstoxCode = p0),
+            TextButton(
+                onPressed: ctrl.onAuthenticateClicked,
+                child: const Text('Authenticate with Upstox')),
+          ]),
         ));
-  }
-
-  void init() async {
-    HOSTNAME = '10.244.88.51';
-    PORT = '8903';
-    CallContext callContext = await Apis().ogLogin('gokul', 'unnir7488*');
-    if (!callContext.isError) {
-      token = callContext.data.token;
-    }
   }
 }
