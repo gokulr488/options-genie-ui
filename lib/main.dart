@@ -8,27 +8,27 @@ import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 
-//flutter build web --base-href /talos/
+//flutter build web
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await init();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider<UiState>(create: (_) => UiState()),
     ChangeNotifierProvider<AppData>(create: (_) => AppData()),
-  ], child: TalosBroadcast()));
+  ], child: OptionsGenie()));
 }
 
 Future init() async {
   //await SettingsController.instance.load();
 }
 
-class TalosBroadcast extends StatelessWidget {
-  TalosBroadcast({super.key});
+class OptionsGenie extends StatelessWidget {
+  OptionsGenie({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-        title: 'Talos Broadcast',
+        title: 'Options Genie',
         theme: ThemeData(
             useMaterial3: true,
             colorSchemeSeed: themeColor,
