@@ -3,7 +3,9 @@
 import 'package:optionsgenieui/apis/apis.dart';
 import 'package:optionsgenieui/common/app_data.dart';
 import 'package:talos_commons/base_classes/base_api.dart';
+import 'package:talos_commons/utils/Alerts.dart';
 import 'package:talos_commons/utils/call_context.dart';
+import 'package:talos_commons/utils/log_level.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeController {
@@ -42,7 +44,10 @@ class HomeController {
   void onAuthenticateClicked() async {
     CallContext callContext = await Apis().upstoxLogin(upstoxCode ?? '');
     if (!callContext.isError) {
-      // _launchInBrowser(callContext.data.url);
+      log(callContext.data.message, logLevel: TOAST_MESSAGE);
+    } else {
+      log('Failed to authenticate ${callContext.message}',
+          logLevel: POP_UP_MESSAGE);
     }
   }
 }

@@ -30,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: ctrl.onLoginToUpstoxClicked,
                 child: const Text('Login to Upstox')),
             BuildTextField(
+                width: 300,
                 label: 'Upstox Code',
                 initialValue: ctrl.upstoxCode,
                 onChanged: (p0) => ctrl.upstoxCode = p0),

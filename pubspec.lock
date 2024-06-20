@@ -697,10 +697,10 @@ packages:
     dependency: "direct main"
     description:
       name: talos_commons
-      sha256: a35413f44f87bff4b0096ff4d9e597350611be8f6b9fd50798802dd65fdbae5d
+      sha256: "48d9f933c3bc8107593cb4eae9d80bb0be727e069fce6f69ff5f5a5e44f770ef"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.19"
+    version: "0.0.20"
   term_glyph:
     dependency: transitive
     description:
