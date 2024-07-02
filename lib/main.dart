@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:optionsgenieui/common/app_data.dart';
+import 'package:optionsgenieui/common/https_override.dart';
 import 'package:optionsgenieui/common/ui_constants.dart';
 import 'package:optionsgenieui/common/ui_state.dart';
 import 'package:optionsgenieui/constants.dart';
@@ -19,6 +22,7 @@ Future<void> main() async {
 }
 
 Future init() async {
+  HttpOverrides.global = DevHttpOverrides();
   //await SettingsController.instance.load();
 }
 

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:optionsgenieui/common/app_data.dart';
+import 'package:optionsgenieui/constants.dart';
 import 'package:talos_commons/base_classes/base_api.dart';
 import 'package:talos_commons/base_classes/base_json.dart';
 import 'package:talos_commons/utils/call_context.dart';
@@ -10,7 +11,8 @@ import 'package:http/http.dart' as http;
 part 'upstox_login_page.g.dart';
 
 class UpstoxLoginPageApi extends BaseApi {
-  UpstoxLoginPageApi({required super.req, super.showDefaultError});
+  UpstoxLoginPageApi(
+      {required super.req, super.showDefaultError, super.isHttps = IS_HTTPS});
 
   @override
   Future<CallContext> call() async {

@@ -1,5 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
+const bool IS_HTTPS = true;
+
 const String WELCOME_SCREEN = 'welcome';
 const String SETTINGS_SCREEN = 'settings';
 const String HOME_SCREEN = 'home';

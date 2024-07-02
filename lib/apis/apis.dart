@@ -1,3 +1,4 @@
+import 'package:optionsgenieui/apis/get_option_chain.dart';
 import 'package:optionsgenieui/apis/og_login.dart';
 import 'package:optionsgenieui/apis/upstox_login_page.dart';
 import 'package:optionsgenieui/apis/upstox_login.dart';
@@ -16,5 +17,11 @@ class Apis {
 
   Future<CallContext> upstoxLogin(String code) async {
     return await UpstoxLoginApi(req: UpstoxLoginReq(code: code)).call();
+  }
+
+  Future<CallContext> getOptionChain(String futuresKey, {String? date}) async {
+    return await GetOptionChainApi(
+            req: GetOptionChainApiReq(futuresKey: futuresKey, date: date))
+        .call();
   }
 }

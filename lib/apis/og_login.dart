@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:optionsgenieui/constants.dart';
 import 'package:talos_commons/base_classes/base_api.dart';
 import 'package:talos_commons/base_classes/base_json.dart';
 import 'package:talos_commons/utils/call_context.dart';
@@ -8,7 +9,8 @@ import 'package:http/http.dart' as http;
 part 'og_login.g.dart';
 
 class OgLoginApi extends BaseApi {
-  OgLoginApi({required super.req, super.showDefaultError});
+  OgLoginApi(
+      {required super.req, super.showDefaultError, super.isHttps = IS_HTTPS});
 
   @override
   Future<CallContext> call() async {
