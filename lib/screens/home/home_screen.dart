@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:optionsgenieui/constants.dart';
 import 'package:optionsgenieui/screens/home/home_controller.dart';
 import 'package:talos_commons/widgets/base_screen.dart';
 import 'package:talos_commons/widgets/build_text_field.dart';
@@ -37,6 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
             TextButton(
                 onPressed: ctrl.onAuthenticateClicked,
                 child: const Text('Authenticate with Upstox')),
+            TextButton(
+                onPressed: () => context.goNamed(GRAPH_SCREEN),
+                child: const Text('Graph View')),
           ]),
         ));
   }

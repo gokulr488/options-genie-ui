@@ -6,6 +6,7 @@ import 'package:optionsgenieui/common/https_override.dart';
 import 'package:optionsgenieui/common/ui_constants.dart';
 import 'package:optionsgenieui/common/ui_state.dart';
 import 'package:optionsgenieui/constants.dart';
+import 'package:optionsgenieui/screens/graph/graph_screen.dart';
 import 'package:optionsgenieui/screens/home/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -66,6 +67,11 @@ class OptionsGenie extends StatelessWidget {
         builder: (BuildContext context, GoRouterState state) =>
             const HomeScreen(),
         routes: [
+          GoRoute(
+              name: GRAPH_SCREEN,
+              path: GRAPH_SCREEN,
+              builder: (BuildContext context, GoRouterState state) =>
+                  const GraphScreen()),
           GoRoute(
               name: SETTINGS_SCREEN,
               path: SETTINGS_SCREEN,

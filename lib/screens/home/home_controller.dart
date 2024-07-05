@@ -17,6 +17,7 @@ class HomeController {
 
   void init() async {
     HOSTNAME = '10.244.88.51';
+    // HOSTNAME = 'localhost';
     PORT = '8903';
     CallContext callContext = await Apis().ogLogin('gokul', 'unnir7488*');
     if (!callContext.isError) {
